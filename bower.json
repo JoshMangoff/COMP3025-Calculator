@@ -1,0 +1,22 @@
+{
+  "name": "calculator",
+  "description": "Simple Calculator App",
+  "main": "index.js",
+  "authors": [
+    "Josh Mangoff"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "Scripts/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.1.4",
+    "jquery-mobile-bower": "^1.4.5"
+  }
+}
