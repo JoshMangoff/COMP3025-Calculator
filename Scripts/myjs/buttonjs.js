@@ -56,10 +56,7 @@ $(document).bind('pageinit',function(){
                             //divide by 0 errors
                             document.getElementById("display").value = "ERORR";
                         }
-                    }
-
-                    //for overflow errors
-                    
+                    }                    
 
                     //for avoiding invalid order of button clicks
                     if (pressedButton == "=") {
