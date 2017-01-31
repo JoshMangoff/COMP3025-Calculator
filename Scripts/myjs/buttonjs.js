@@ -1,6 +1,6 @@
 /*
 * Josh Mangoff
-* Jan 30 2017
+* Jan 31 2017
 * button events for calculator app
 */
 $(document).bind('pageinit',function(){
@@ -18,6 +18,7 @@ $(document).bind('pageinit',function(){
         
         //if for what button was clicked
         if (pressedButton == "AC") {
+            //clear button
             nextNum = true;
             visibleNum = 0;
             invisibleNum = 0;
@@ -27,14 +28,16 @@ $(document).bind('pageinit',function(){
         else if (pressedButton == "+" | pressedButton == "-"
             | pressedButton == "*" | pressedButton == "/"
             | pressedButton == "=") {
-
+            //operator and equals buttons
             if (nextNum == false) {
                 if (operator == "+") {
-                    invisibleNum = invisibleNum + visibleNum;
+                    invisibleNum = parseFloat(invisibleNum)
+                         + parseFloat(visibleNum);
                     document.getElementById("display").value = invisibleNum;
                 }
                 else if (operator == "-") {
-                    invisibleNum = invisibleNum - visibleNum;
+                    invisibleNum = parseFloat(invisibleNum)
+                         - parseFloat(visibleNum);
                     document.getElementById("display").value = invisibleNum;
                 }
                 else if (operator == "*") {
@@ -46,6 +49,7 @@ $(document).bind('pageinit',function(){
                     document.getElementById("display").value = invisibleNum;
                 }
 
+                //for avoiding invalid order of button clicks
                 if (pressedButton == "=") {
                     operator = pressedButton;
                 }
@@ -56,13 +60,14 @@ $(document).bind('pageinit',function(){
                 nextNum = true;
             }
             if (pressedButton != "=") {
+                //for avoiding invalid order of button clicks
                 operator = pressedButton;
             }
 
         }
         else {
             if (operator != "=") {
-
+                //for numbers and decimal
                 if (nextNum) {
                     visibleNum = "";
                     nextNum = false;
