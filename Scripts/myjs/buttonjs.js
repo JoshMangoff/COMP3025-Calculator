@@ -45,11 +45,15 @@ $(document).bind('pageinit',function(){
                     invisibleNum = invisibleNum / visibleNum;
                     document.getElementById("display").value = invisibleNum;
                 }
-                nextNum = true;
+
                 if (pressedButton == "=") {
                     operator = pressedButton;
                 }
-                invisibleNum = visibleNum;
+                else if (operator == "") {
+                    invisibleNum = visibleNum;
+                }
+                
+                nextNum = true;
             }
             if (pressedButton != "=") {
                 operator = pressedButton;
